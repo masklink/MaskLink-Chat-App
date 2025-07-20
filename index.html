@@ -15,6 +15,7 @@
         .list-item-main-info{flex-grow:1;display:flex;align-items:center;cursor:pointer;}
         .list-item-info{display:flex;flex-direction:column;flex-grow:1;position:relative;}
         .list-item-name{font-size:18px;}
+        .list-item-bio{font-size: 12px; color: #a0a0a0; margin-top: 4px; font-style: italic;}
         .list-item-emoji{font-size:24px;margin-right:15px;position:relative;}
         .list-item-actions{display:flex;flex-direction:row;gap:5px;}
         .list-item-actions button{width:auto;padding:4px 8px;font-size:11px;margin-top:0;min-width:auto;}
@@ -22,7 +23,21 @@
         .status-indicator { position: absolute; bottom: 0; right: -2px; height: 11px; width: 11px; border-radius: 50%; border: 2px solid var(--bg); }
         .status-indicator.online { background-color: var(--accent-color); }
         .status-indicator.offline { background-color: #6c757d; }
-        #chat-view{position:fixed;top:0;left:0;width:100%;height:100%;background-color:var(--bg);z-index:1010;display:flex;flex-direction:column;}.chat-header{display:flex;align-items:center;padding:10px;background-color:#000c1f;border-bottom:1px solid var(--accent-color);}.chat-header-info{flex-grow:1;display:flex;align-items:center;}.chat-header .back-button{background:none;border:none;color:var(--accent-color);font-size:24px;margin-right:15px;cursor:pointer;max-width:min-content;}.chat-header-info span:first-child{font-size:24px;margin-right:10px;}.chat-header-info span:last-child{font-size:18px;font-weight:700;}.chat-header .block-button{font-size:9px;padding:3px 6px;margin-left:auto;margin-top:0;min-width:auto;border-radius:5px;}.messages-container{flex-grow:1;padding:15px;overflow-y:auto;display:flex;flex-direction:column;}.message-bubble{max-width:70%;padding:10px 15px;border-radius:20px;margin-bottom:10px;line-height:1.4;word-wrap:break-word;}.message-bubble.sent{background-color:var(--secondary-accent);color:#fff;align-self:flex-end;border-bottom-right-radius:5px;}.message-bubble.received{background-color:#333;color:#fff;align-self:flex-start;border-bottom-left-radius:5px;}body.light-theme .message-bubble.received{background-color:#e4e6eb;color:#050505;}.chat-input-area{display:flex;padding:10px;border-top:1px solid var(--accent-color);}.chat-input-area input{flex-grow:1;margin:0 10px 0 0;}.chat-input-area button{width:auto;padding:0 25px;margin:0;}.incoming-call-text{animation:pulse 1.5s infinite;}@keyframes pulse{0%{opacity:1}50%{opacity:.5}100%{opacity:1}}#call-view{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;z-index:2000;display:flex;flex-direction:column;justify-content:center;align-items:center;}#remote-video{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;}#local-video{position:absolute;bottom:20px;right:20px;width:25%;max-width:180px;border:2px solid var(--accent-color);border-radius:10px;z-index:2001;cursor:move;}#local-video.hidden{display:none;}.call-controls{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2002;}.call-info{position:absolute;top:30px;left:50%;transform:translateX(-50%);z-index:2002;background:rgba(0,0,0,.5);color:#fff;padding:10px 20px;border-radius:20px;text-align:center;}.call-info-emoji{font-size:40px;}.call-info-name,.call-info-status{font-size:20px;}
+        #chat-view{position:fixed;top:0;left:0;width:100%;height:100%;background-color:var(--bg);z-index:1010;display:flex;flex-direction:column;}.chat-header{display:flex;align-items:center;padding:10px;background-color:#000c1f;border-bottom:1px solid var(--accent-color);}.chat-header-info{flex-grow:1;display:flex;align-items:center;}.chat-header .back-button{background:none;border:none;color:var(--accent-color);font-size:24px;margin-right:15px;cursor:pointer;max-width:min-content;}.chat-header-info span:first-child{font-size:24px;margin-right:10px;}.chat-header-info span:last-child{font-size:18px;font-weight:700;}
+        .wallpaper-button { background: none; border: none; font-size: 20px; cursor: pointer; color: var(--accent-color); margin-left: auto; padding: 0 10px;}
+        .chat-header .block-button{font-size:9px;padding:3px 6px;margin-left:10px;margin-top:0;min-width:auto;border-radius:5px;}
+        .messages-container{flex-grow:1;padding:15px;overflow-y:auto;display:flex;flex-direction:column;transition: background-color 0.3s;}.message-bubble{max-width:70%;padding:10px 15px;border-radius:20px;margin-bottom:10px;line-height:1.4;word-wrap:break-word;cursor:pointer;}.message-bubble.sent{background-color:var(--secondary-accent);color:#fff;align-self:flex-end;border-bottom-right-radius:5px;}.message-bubble.received{background-color:#333;color:#fff;align-self:flex-start;border-bottom-left-radius:5px;}body.light-theme .message-bubble.received{background-color:#e4e6eb;color:#050505;}.chat-input-area{display:flex;padding:10px;border-top:1px solid var(--accent-color);}.chat-input-area input{flex-grow:1;margin:0 10px 0 0;}.chat-input-area button{width:auto;padding:0 25px;margin:0;}.incoming-call-text{animation:pulse 1.5s infinite;}@keyframes pulse{0%{opacity:1}50%{opacity:.5}100%{opacity:1}}#call-view{position:fixed;top:0;left:0;width:100%;height:100%;background-color:#000;z-index:2000;display:flex;flex-direction:column;justify-content:center;align-items:center;}#remote-video{width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;}#local-video{position:absolute;bottom:20px;right:20px;width:25%;max-width:180px;border:2px solid var(--accent-color);border-radius:10px;z-index:2001;cursor:move;}#local-video.hidden{display:none;}.call-controls{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2002;}.call-info{position:absolute;top:30px;left:50%;transform:translateX(-50%);z-index:2002;background:rgba(0,0,0,.5);color:#fff;padding:10px 20px;border-radius:20px;text-align:center;}.call-info-emoji{font-size:40px;}.call-info-name,.call-info-status{font-size:20px;}
+        #wallpaper-picker-modal .color-option { width: 40px; height: 40px; border-radius: 50%; display: inline-block; margin: 10px; cursor: pointer; border: 2px solid white; }
+        
+        /* --- ADDED FEATURE: CSS for Blinking Profile Button --- */
+        .blink-profile {
+            animation: blink-red 1s infinite;
+        }
+        @keyframes blink-red {
+            0%   { background-color: var(--secondary-accent); }
+            50%  { background-color: var(--error-color); }
+            100% { background-color: var(--secondary-accent); }
+        }
     </style>
 </head>
 <body>
@@ -38,21 +53,71 @@
         <div id="profile-setup-modal" class="modal-overlay hidden"><div class="modal-content"><h2>Setup Your Profile</h2><p id="profile-error" class="error-message hidden"></p><input type="text" id="profile-name" placeholder="Enter name"><input type="text" id="profile-emoji" placeholder="Enter emoji (e.g., 👽)" maxlength="2"><button id="save-profile-button">Save Profile</button></div></div>
         <div id="add-friend-modal" class="modal-overlay hidden"><div class="modal-content"><h2>Add Friend</h2><p id="add-friend-error" class="error-message hidden"></p><p id="add-friend-success" class="hidden" style="color: var(--accent-color);">Request Sent!</p><input type="text" id="friend-mask-id-input" placeholder="mask-xxxx"><button id="send-friend-request-button">Send</button><button id="close-add-friend-modal-button" class="secondary">Close</button></div></div>
         <div id="menu-modal" class="modal-overlay hidden"><div class="modal-content"><h2>Menu</h2><button id="menu-profile-button">View Profile</button><button id="menu-blocked-button">Blocked Users</button><button id="menu-theme-button">Theme</button><button id="menu-logout-button">Logout</button><button id="menu-close-button" class="secondary">Close</button></div></div>
-        <div id="profile-view-modal" class="modal-overlay hidden"><div class="modal-content"><h2>Your Profile</h2><p id="profile-update-error" class="error-message hidden"></p><input type="text" id="profile-edit-name"><input type="text" id="profile-edit-emoji" maxlength="2"><div class="profile-id-display">ID: <span id="profile-mask-id"></span></div><button id="profile-save-changes-button">Save</button><button id="profile-view-close-button" class="secondary">Close</button></div></div>
+        <div id="profile-view-modal" class="modal-overlay hidden"><div class="modal-content"><h2>Your Profile</h2><p id="profile-update-error" class="error-message hidden"></p><input type="text" id="profile-edit-name"><input type="text" id="profile-edit-emoji" maxlength="2">
+            <input type="text" id="profile-edit-bio" placeholder="Your status/bio..." maxlength="50">
+            <div class="profile-id-display">ID: <span id="profile-mask-id"></span></div><button id="profile-save-changes-button">Save</button><button id="profile-view-close-button" class="secondary">Close</button></div></div>
         <div id="incoming-call-modal" class="modal-overlay hidden"><div class="modal-content"><h2 class="incoming-call-text">Incoming Call</h2><div id="incoming-call-info" style="margin-bottom: 20px; font-size: 20px;"></div><button id="accept-call-button">Accept</button><button id="reject-call-button" class="danger">Reject</button></div></div>
         <div id="blocked-users-modal" class="modal-overlay hidden"><div class="modal-content"><h2>Blocked Users</h2><div id="blocked-users-list"></div><button id="blocked-users-close-button" class="secondary">Close</button></div></div>
         <div id="friend-profile-modal" class="modal-overlay hidden">
             <div class="modal-content">
                 <div id="friend-profile-emoji" style="font-size: 48px; margin-bottom: 10px;"></div>
-                <h2 id="friend-profile-name" style="color: var(--text-color); margin-bottom: 20px;"></h2>
+                <h2 id="friend-profile-name" style="color: var(--text-color); margin-bottom: 5px;"></h2>
+                <p id="friend-profile-bio" style="font-style: italic; color: #a0a0a0; margin-top: 0; margin-bottom: 20px;"></p>
                 <div class="profile-id-display">ID: <span id="friend-profile-mask-id"></span></div>
                 <button id="friend-profile-close-button" class="secondary">Close</button>
             </div>
         </div>
         
+        <div id="random-user-modal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <h2>Random Discovery</h2>
+                <div id="random-user-profile" class="hidden" style="margin-bottom: 20px; text-align: center;">
+                    <div id="random-user-emoji" style="font-size: 48px; margin-bottom: 10px;"></div>
+                    <h3 id="random-user-name" style="color: var(--text-color); margin-bottom: 10px;"></h3>
+                    <div class="profile-id-display">ID: <span id="random-user-mask-id"></span></div>
+                </div>
+                <p id="random-user-error" class="error-message hidden"></p>
+                <button id="send-request-from-random-button">Send Friend Request</button>
+                <button id="find-another-random-button" class="secondary">Find Another</button>
+                <button id="close-random-modal-button" class="secondary">Close</button>
+            </div>
+        </div>
+
+        <div id="wallpaper-picker-modal" class="modal-overlay hidden">
+            <div class="modal-content">
+                <h2>Choose Wallpaper Color</h2>
+                <div>
+                    <div class="color-option" data-color="var(--bg)" style="background-color: #000814;"></div>
+                    <div class="color-option" data-color="#2a2a2a" style="background-color: #2a2a2a;"></div>
+                    <div class="color-option" data-color="#001F3F" style="background-color: #001F3F;"></div>
+                    <div class="color-option" data-color="#3D003D" style="background-color: #3D003D;"></div>
+                </div>
+                <button id="close-wallpaper-picker" class="secondary">Close</button>
+            </div>
+        </div>
+
         <!-- Main App Views -->
-        <div id="main-app" class="main-app hidden"><div class="top-bar"><button class="nav-button" id="menu-button">Menu</button><div class="app-title-small"><a href="https://t.me/MuskLinkBD" target="_blank">MaskLink</a></div><button class="nav-button" id="add-friend-button">Add Friend</button></div><div class="main-content"><div id="pages-container"><div id="home-page" class="page active"><h2>Friends</h2><div id="contacts-list"></div></div><div id="notifications-page" class="page"><h2>Notifications</h2><div id="notifications-list"></div></div><div id="calls-page" class="page"><h2>Call Logs</h2><div id="call-log-list"></div></div></div></div><div class="bottom-bar"><button class="nav-button" data-page="home-page">Home</button><button class="nav-button" data-page="notifications-page">Notifications <span id="notification-badge" class="notification-badge hidden">0</span></button><button class="nav-button" data-page="calls-page">Calls</button></div></div>
-        <div id="chat-view" class="hidden"><div class="chat-header"><button class="back-button" id="chat-back-button">←</button><div class="chat-header-info"><span id="chat-header-emoji"></span><span id="chat-header-name"></span></div><button class="block-button secondary" id="chat-block-button">Block</button></div><div class="messages-container" id="messages-container"></div><div class="chat-input-area"><input type="text" id="message-input" placeholder="Type a message..."><button id="send-message-button">Send</button></div></div>
+        <div id="main-app" class="main-app hidden"><div class="top-bar"><button class="nav-button" id="menu-button">Menu</button><div class="app-title-small"><a href="https://t.me/MuskLinkBD" target="_blank">MaskLink</a></div><button class="nav-button" id="add-friend-button">Add Friend</button></div><div class="main-content"><div id="pages-container">
+            <div id="home-page" class="page active">
+                <button id="find-random-user-button" style="width: 100%; margin-bottom: 20px;">🎲 Discover Someone New</button>
+                <h2>Friends</h2>
+                <div id="contacts-list"></div>
+            </div>
+            <div id="notifications-page" class="page"><h2>Notifications</h2><div id="notifications-list"></div></div><div id="calls-page" class="page"><h2>Call Logs</h2><div id="call-log-list"></div></div></div></div><div class="bottom-bar"><button class="nav-button" data-page="home-page">Home</button><button class="nav-button" data-page="notifications-page">Notifications <span id="notification-badge" class="notification-badge hidden">0</span></button><button class="nav-button" data-page="calls-page">Calls</button></div></div>
+        
+        <div id="chat-view" class="hidden">
+            <div class="chat-header">
+                <button class="back-button" id="chat-back-button">←</button>
+                <div class="chat-header-info">
+                    <span id="chat-header-emoji"></span>
+                    <span id="chat-header-name"></span>
+                </div>
+                <button id="wallpaper-button" class="wallpaper-button">🎨</button>
+                <button class="block-button secondary" id="chat-block-button">Block</button>
+            </div>
+            <div class="messages-container" id="messages-container"></div>
+            <div class="chat-input-area"><input type="text" id="message-input" placeholder="Type a message..."><button id="send-message-button">Send</button></div>
+        </div>
         
         <div id="call-view" class="hidden"><video id="remote-video" autoplay playsinline></video><video id="local-video" autoplay playsinline muted></video><div class="call-info"><div class="call-info-emoji"></div><div class="call-info-name"></div><div class="call-info-status"></div></div><div class="call-controls"><button id="end-call-button" class="danger">End Call</button></div></div>
     </div>
@@ -81,18 +146,8 @@
         let currentUserData = null, activeListeners = [], peerConnection, localStream, incomingCallData;
         let userContacts = {}, blockedUsers = {}, unreadMessages = {}, onlineStatus = {}, currentOpenChatContactUid = null, currentCallContactUid = null;
         
-        // --- CORRECTED: Added more STUN servers and a placeholder for a TURN server ---
-        // You MUST get real TURN server credentials from a service like Twilio, Metered, Xirsys etc. for reliable calling across different networks.
         const stunServers = {
-            iceServers: [
-                { urls: 'stun:stun.l.google.com:19302' },
-                { urls: 'stun:stun1.l.google.com:19302' },
-                // {
-                //   urls: 'turn:your-turn-server.com:3478', // Replace with your TURN server URL
-                //   username: 'your-username',             // Replace with your username
-                //   credential: 'your-password'            // Replace with your password
-                // }
-            ]
+            iceServers: [ { urls: 'stun:stun.l.google.com:19302' }, { urls: 'stun:stun1.l.google.com:19302' } ]
         };
 
         const ui = {loader: document.getElementById('loader'),auth: document.getElementById('auth-container'),app: document.getElementById('app-container'),main: document.getElementById('main-app'),chat: document.getElementById('chat-view'),profileSetup: document.getElementById('profile-setup-modal'),call: document.getElementById('call-view'),incomingCall: document.getElementById('incoming-call-modal'),ringtone: document.getElementById('ringtone')};
@@ -135,11 +190,28 @@
             document.getElementById('reject-call-button').addEventListener('click', handleRejectCall);
             document.getElementById('end-call-button').addEventListener('click', () => endCall(true));
             applyTheme(localStorage.getItem('masklink-theme') || 'dark');
-            requestNotificationPermission(); 
+            requestNotificationPermission();
+
+            document.getElementById('find-random-user-button').addEventListener('click', findRandomOnlineUser);
+            document.getElementById('find-another-random-button').addEventListener('click', findRandomOnlineUser);
+            document.getElementById('close-random-modal-button').addEventListener('click', () => document.getElementById('random-user-modal').classList.add('hidden'));
+            
+            document.getElementById('wallpaper-button').addEventListener('click', () => document.getElementById('wallpaper-picker-modal').classList.remove('hidden'));
+            document.getElementById('close-wallpaper-picker').addEventListener('click', () => document.getElementById('wallpaper-picker-modal').classList.add('hidden'));
+            document.querySelectorAll('#wallpaper-picker-modal .color-option').forEach(option => {
+                option.addEventListener('click', (e) => {
+                    const color = e.target.dataset.color;
+                    document.getElementById('messages-container').style.backgroundColor = color;
+                    if(currentOpenChatContactUid) {
+                        localStorage.setItem(`wallpaper_${currentOpenChatContactUid}`, color);
+                    }
+                    document.getElementById('wallpaper-picker-modal').classList.add('hidden');
+                });
+            });
         }
         
         const handleAuth=(i)=>()=>{const e=i?"signup":"login",t=document.getElementById(`${e}-email`).value.trim(),d=document.getElementById(`${e}-password`).value.trim(),l=document.getElementById(`${e}-error`);l.classList.add("hidden"),t&&d?(i?auth.createUserWithEmailAndPassword(t,d):auth.signInWithEmailAndPassword(t,d)).catch(e=>{l.textContent=e.message,l.classList.remove("hidden")}):(l.textContent="Email & Password required.",l.classList.remove("hidden"))};
-        function handleProfileSave() {const e=auth.currentUser;if(!e)return;const t=document.getElementById("profile-name").value.trim(),d=document.getElementById("profile-emoji").value.trim(),l=document.getElementById("profile-error");if(l.classList.add("hidden"),!t||!d)return l.textContent="Name & emoji required.",void l.classList.remove("hidden");const n=`mask-${Math.random().toString(36).substr(2,4)}`,a={name:t,emoji:d,uid:e.uid,maskId:n,email:e.email},o={};o[`/users/${e.uid}`]=a,o[`/maskIds/${n}`]=e.uid,database.ref().update(o).then(()=>loadUserDataAndStartApp(e)).catch(e=>{l.textContent=e.message,l.classList.remove("hidden")})}
+        function handleProfileSave() {const e=auth.currentUser;if(!e)return;const t=document.getElementById("profile-name").value.trim(),d=document.getElementById("profile-emoji").value.trim(),l=document.getElementById("profile-error");if(l.classList.add("hidden"),!t||!d)return l.textContent="Name & emoji required.",void l.classList.remove("hidden");const n=`mask-${Math.random().toString(36).substr(2,4)}`,a={name:t,emoji:d,uid:e.uid,maskId:n,email:e.email, bio: ""},o={};o[`/users/${e.uid}`]=a,o[`/maskIds/${n}`]=e.uid,database.ref().update(o).then(()=>loadUserDataAndStartApp(e)).catch(e=>{l.textContent=e.message,l.classList.remove("hidden")})}
         
         function startAppListeners(uid) {
             const addListener=(r,e,t)=>{r.on(e,t);activeListeners.push({ref:r,eventType:e,callback:t})};
@@ -200,16 +272,26 @@
                 const status = onlineStatus[c.uid]?.state === 'online' ? 'online' : 'offline';
                 const statusIndicator = `<span class="status-indicator ${status}"></span>`;
                 const unreadIndicator = unreadMessages[c.uid] ? '<span class="unread-dot"></span>' : '';
+                const bioIndicator = c.bio ? `<span class="list-item-bio">${c.bio}</span>` : '';
 
                 const el = document.createElement('div'); el.className = 'list-item';
                 const mainInfo = document.createElement('div'); mainInfo.className = 'list-item-main-info';
-                mainInfo.innerHTML = `<span class="list-item-emoji">${statusIndicator}${c.emoji}</span><div class="list-item-info"><span class="list-item-name">${c.name}</span>${unreadIndicator}</div>`;
+                mainInfo.innerHTML = `<span class="list-item-emoji">${statusIndicator}${c.emoji}</span><div class="list-item-info"><span class="list-item-name">${c.name}</span>${bioIndicator}${unreadIndicator}</div>`;
                 mainInfo.onclick = () => showChatView(c);
+
                 const actions = document.createElement('div'); actions.className = 'list-item-actions';
                 actions.innerHTML = `<button data-uid="${c.uid}" class="secondary">Profile</button><button data-uid="${c.uid}" data-type="video">Video</button><button data-uid="${c.uid}" data-type="audio">Voice</button>`;
-                actions.querySelector('[class="secondary"]').onclick = () => showFriendProfile(c.uid);
+                
+                // --- ADDED FEATURE: Add blinking class to profile button if unread --- //
+                const profileButton = actions.querySelector('button.secondary');
+                if (unreadMessages[c.uid]) {
+                    profileButton.classList.add('blink-profile');
+                }
+
+                profileButton.onclick = () => showFriendProfile(c.uid);
                 actions.querySelector('[data-type="video"]').onclick = () => initiateCall(c.uid, 'video');
                 actions.querySelector('[data-type="audio"]').onclick = () => initiateCall(c.uid, 'audio');
+                
                 el.appendChild(mainInfo); el.appendChild(actions); list.appendChild(el);
             });
         }
@@ -217,11 +299,15 @@
         function createRequestElement(key, request) {const el=document.createElement("div");el.className="list-item";el.innerHTML=`<span class="list-item-emoji">${request.senderEmoji}</span><div class="list-item-info"><span class="list-item-name">${request.senderName}</span><span>wants to connect.</span></div><div class="list-item-actions"><button>Accept</button><button class="danger">Reject</button></div>`;el.querySelector("button:first-child").onclick=()=>handleRequest(key,request.senderUid,!0);el.querySelector("button:last-child").onclick=()=>handleRequest(key,request.senderUid,!1);return el}
         function renderCallLogs(snapshot) {const list=document.getElementById('call-log-list');list.innerHTML='';if(!snapshot.exists()){list.innerHTML='<p>Call history is empty.</p>';return}const logs=[];snapshot.forEach(s=>logs.push(s.val()));logs.reverse().forEach(log=>{const el=document.createElement('div');el.className='list-item';el.innerHTML=`<span class="list-item-emoji">${log.type==='video'?'📹':'📞'}</span><div class="list-item-info"><span class="list-item-name">${log.contactName} (${log.direction})</span><span>${new Date(log.timestamp).toLocaleString()}</span></div>`;list.appendChild(el)})}
         
-        async function handleRequest(key, senderUid, accepted) {const myUid = auth.currentUser.uid;if (!myUid) return;const reqRef = database.ref(`requests/${myUid}/${key}`);if (!accepted) { await reqRef.remove(); return; }const senderSnap = await database.ref(`users/${senderUid}`).once('value');const senderData = senderSnap.val();if (!senderData || !currentUserData) return;const updates = {};updates[`/contacts/${myUid}/${senderUid}`] = {name: senderData.name, emoji: senderData.emoji, uid: senderData.uid};updates[`/contacts/${senderUid}/${myUid}`] = {name: currentUserData.name, emoji: currentUserData.emoji, uid: currentUserData.uid};updates[`/requests/${myUid}/${key}`] = null;await database.ref().update(updates);}
+        async function handleRequest(key, senderUid, accepted) {const myUid = auth.currentUser.uid;if (!myUid) return;const reqRef = database.ref(`requests/${myUid}/${key}`);if (!accepted) { await reqRef.remove(); return; }const senderSnap = await database.ref(`users/${senderUid}`).once('value');const senderData = senderSnap.val();if (!senderData || !currentUserData) return;const updates = {};updates[`/contacts/${myUid}/${senderUid}`] = {name: senderData.name, emoji: senderData.emoji, uid: senderData.uid, bio: senderData.bio || ""};updates[`/contacts/${senderUid}/${myUid}`] = {name: currentUserData.name, emoji: currentUserData.emoji, uid: currentUserData.uid, bio: currentUserData.bio || ""};updates[`/requests/${myUid}/${key}`] = null;await database.ref().update(updates);}
         function showChatView(contact) {
             if (blockedUsers[contact.uid]) { alert("This user is blocked."); return; }
             currentOpenChatContactUid = contact.uid;
             database.ref(`unread_markers/${currentUserData.uid}/${contact.uid}`).remove();
+            
+            const savedColor = localStorage.getItem(`wallpaper_${contact.uid}`);
+            document.getElementById('messages-container').style.backgroundColor = savedColor || 'var(--bg)';
+            
             ui.main.classList.add('hidden');ui.chat.classList.remove('hidden');
             document.getElementById('chat-header-name').textContent=contact.name; document.getElementById('chat-header-emoji').textContent=contact.emoji;
             const blockBtn = document.getElementById('chat-block-button'); blockBtn.onclick = () => blockUser(contact);
@@ -244,9 +330,20 @@
             inputEl.value = "";
         }
         function toggleTheme(){let e=document.body.classList.contains("light-theme")?"dark":"light";localStorage.setItem("masklink-theme",e);applyTheme(e)}function applyTheme(e){document.body.classList.toggle("light-theme",e==="light")}
-        function openProfileViewModal(){if(!currentUserData)return;document.getElementById('profile-edit-name').value=currentUserData.name;document.getElementById('profile-edit-emoji').value=currentUserData.emoji;document.getElementById('profile-mask-id').textContent=currentUserData.maskId;document.getElementById('profile-view-modal').classList.remove('hidden');document.getElementById('menu-modal').classList.add('hidden')}
-        async function saveProfileChanges(){const e=document.getElementById("profile-edit-name").value.trim(),t=document.getElementById("profile-edit-emoji").value.trim(),a=document.getElementById("profile-update-error");if(!e||!t)return a.textContent="Name and Emoji cannot be empty.",void a.classList.remove("hidden");database.ref("users/"+currentUserData.uid).update({name:e,emoji:t}).then(()=>document.getElementById('profile-view-modal').classList.add("hidden")).catch(e=>{a.textContent=e.message,a.classList.remove("hidden")})}
-        function showFriendProfile(friendUid) {database.ref(`users/${friendUid}`).once('value', snapshot => {if (snapshot.exists()) {const friendData = snapshot.val();document.getElementById('friend-profile-emoji').textContent = friendData.emoji;document.getElementById('friend-profile-name').textContent = friendData.name;document.getElementById('friend-profile-mask-id').textContent = friendData.maskId;document.getElementById('friend-profile-modal').classList.remove('hidden');} else {alert("Could not load friend's details.");}});}
+        function openProfileViewModal(){if(!currentUserData)return;document.getElementById('profile-edit-name').value=currentUserData.name;document.getElementById('profile-edit-emoji').value=currentUserData.emoji;document.getElementById('profile-mask-id').textContent=currentUserData.maskId;
+            document.getElementById('profile-edit-bio').value = currentUserData.bio || '';
+            document.getElementById('profile-view-modal').classList.remove('hidden');document.getElementById('menu-modal').classList.add('hidden')}
+        async function saveProfileChanges(){
+            const name = document.getElementById("profile-edit-name").value.trim();
+            const emoji = document.getElementById("profile-edit-emoji").value.trim();
+            const bio = document.getElementById("profile-edit-bio").value.trim();
+            const errorEl = document.getElementById("profile-update-error");
+            if(!name || !emoji) return errorEl.textContent="Name and Emoji cannot be empty.", void errorEl.classList.remove("hidden");
+            database.ref("users/"+currentUserData.uid).update({name: name, emoji: emoji, bio: bio}).then(()=>document.getElementById('profile-view-modal').classList.add("hidden")).catch(e=>{errorEl.textContent=e.message,errorEl.classList.remove("hidden")})
+        }
+        function showFriendProfile(friendUid) {database.ref(`users/${friendUid}`).once('value', snapshot => {if (snapshot.exists()) {const friendData = snapshot.val();document.getElementById('friend-profile-emoji').textContent = friendData.emoji;document.getElementById('friend-profile-name').textContent = friendData.name;document.getElementById('friend-profile-mask-id').textContent = friendData.maskId;
+            document.getElementById('friend-profile-bio').textContent = friendData.bio || '';
+            document.getElementById('friend-profile-modal').classList.remove('hidden');} else {alert("Could not load friend's details.");}});}
         
         function requestNotificationPermission() { if (!('Notification' in window)) return; if (Notification.permission !== 'denied') Notification.requestPermission(); }
         function showNotification(title, body) { if ('Notification' in window && Notification.permission === 'granted') { new Notification(title, { body: body, tag: 'masklink-message' }); } }
@@ -264,149 +361,91 @@
         function unblockUser(uidToUnblock) {database.ref(`blocked/${currentUserData.uid}/${uidToUnblock}`).remove().then(() => {alert("User unblocked."); document.getElementById('blocked-users-modal').classList.add('hidden');});}
         function openBlockedUsersModal() {const listEl = document.getElementById('blocked-users-list'); listEl.innerHTML = '';if (Object.keys(blockedUsers).length === 0) { listEl.innerHTML = '<p>No blocked users.</p>'; } else {Object.keys(blockedUsers).forEach(uid => {database.ref(`users/${uid}`).once('value', snapshot => {const userData = snapshot.val();const item = document.createElement('div'); item.className = 'list-item';item.innerHTML = `<div class="list-item-main-info"><span class="list-item-emoji">${userData.emoji}</span><div class="list-item-info"><span class="list-item-name">${userData.name}</span></div></div><button class="danger">Unblock</button>`;item.querySelector('button').onclick = () => unblockUser(uid);listEl.appendChild(item);});});}document.getElementById('blocked-users-modal').classList.remove('hidden');document.getElementById('menu-modal').classList.add('hidden');}
         
-        // --- CALLING LOGIC ---
-        async function initiateCall(calleeUid, type) {
-            console.log(`Initiating ${type} call to ${calleeUid}`);
-            if (blockedUsers[calleeUid]) { alert("Cannot call a blocked user."); return; }
-            try {
-                localStream = await navigator.mediaDevices.getUserMedia({ video: type === 'video', audio: true });
-                document.getElementById('local-video').srcObject = localStream;
-                setupPeerConnection(calleeUid);
-                const offer = await peerConnection.createOffer();
-                await peerConnection.setLocalDescription(offer);
-                console.log("Offer created and set as local description.");
-                const callData = { offer, from: currentUserData.uid, name: currentUserData.name, emoji: currentUserData.emoji, type };
-                await database.ref(`calls/${calleeUid}`).set(callData);
-                console.log("Call data sent to Firebase.");
-                currentCallContactUid = calleeUid;
-                const contactData = await database.ref(`users/${calleeUid}`).once('value');
-                showCallUI(type, contactData.val(), 'Calling...');
-            } catch (err) { console.error("Call Initiation Error:", err); alert("Could not start call. Check camera/mic permissions and console for errors."); }
-        }
+        // --- CALLING LOGIC (No changes here) ---
+        async function initiateCall(calleeUid, type) { console.log(`Initiating ${type} call to ${calleeUid}`); if (blockedUsers[calleeUid]) { alert("Cannot call a blocked user."); return; } try { localStream = await navigator.mediaDevices.getUserMedia({ video: type === 'video', audio: true }); document.getElementById('local-video').srcObject = localStream; setupPeerConnection(calleeUid); const offer = await peerConnection.createOffer(); await peerConnection.setLocalDescription(offer); console.log("Offer created and set as local description."); const callData = { offer, from: currentUserData.uid, name: currentUserData.name, emoji: currentUserData.emoji, type }; await database.ref(`calls/${calleeUid}`).set(callData); console.log("Call data sent to Firebase."); currentCallContactUid = calleeUid; const contactData = await database.ref(`users/${calleeUid}`).once('value'); showCallUI(type, contactData.val(), 'Calling...'); } catch (err) { console.error("Call Initiation Error:", err); alert("Could not start call. Check camera/mic permissions and console for errors."); } }
+        function handleIncomingCallSignal(snapshot) { const callData = snapshot.val(); console.log("Received call signal from Firebase:", callData); if (!callData) return; if (callData.offer && !peerConnection) { if (blockedUsers[callData.from]) { database.ref(`calls/${currentUserData.uid}`).remove(); return; } console.log("Incoming call offer from:", callData.from); incomingCallData = callData; currentCallContactUid = callData.from; document.getElementById('incoming-call-info').textContent = `${callData.emoji} ${callData.name} is calling...`; ui.incomingCall.classList.remove('hidden'); ui.ringtone.play(); } else if (callData.answer && peerConnection?.signalingState === 'have-local-offer') { console.log("Received answer."); peerConnection.setRemoteDescription(new RTCSessionDescription(callData.answer)); } else if (callData.iceCandidate && peerConnection) { console.log("Received new ICE candidate."); peerConnection.addIceCandidate(new RTCIceCandidate(callData.iceCandidate)); } else if (callData.rejection || callData.hangup) { alert("Call " + (callData.rejection ? "Rejected" : "Ended")); endCall(false); } }
+        async function handleAcceptCall() { console.log("Accepting call from:", incomingCallData.from); try { ui.ringtone.pause(); ui.incomingCall.classList.add('hidden'); localStream = await navigator.mediaDevices.getUserMedia({ video: incomingCallData.type === 'video', audio: true }); document.getElementById('local-video').srcObject = localStream; setupPeerConnection(incomingCallData.from); await peerConnection.setRemoteDescription(new RTCSessionDescription(incomingCallData.offer)); const answer = await peerConnection.createAnswer(); await peerConnection.setLocalDescription(answer); console.log("Answer created and set as local description."); await database.ref(`calls/${incomingCallData.from}`).update({ answer }); console.log("Answer sent to Firebase."); showCallUI(incomingCallData.type, incomingCallData, 'Connecting...'); incomingCallData = null; } catch (err) { console.error("Accept Call Error:", err); alert("Could not accept call. Check permissions and console.");} }
+        function handleRejectCall() { console.log("Rejecting call."); ui.ringtone.pause(); ui.incomingCall.classList.add('hidden'); if(incomingCallData?.from) { database.ref(`calls/${incomingCallData.from}`).update({ rejection: true }); } database.ref(`calls/${currentUserData.uid}`).remove(); incomingCallData = null; }
+        function setupPeerConnection(contactUid) { console.log("Setting up PeerConnection..."); peerConnection = new RTCPeerConnection(stunServers); peerConnection.onicecandidate = e => { if (e.candidate) { console.log("Sending ICE candidate to remote peer."); database.ref(`calls/${contactUid}`).update({ iceCandidate: e.candidate.toJSON() }); } }; peerConnection.ontrack = e => { console.log("Received remote track."); document.getElementById('remote-video').srcObject = e.streams[0]; }; localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream)); peerConnection.onconnectionstatechange = () => { const state = peerConnection.connectionState; console.log("Peer connection state changed to:", state); if (state === 'disconnected' || state === 'closed' || state === 'failed') { console.error("Call disconnected or failed."); endCall(false); } else if (state === 'connected') { console.log("Call connected successfully!"); document.querySelector('.call-info-status').textContent = 'Connected'; database.ref(`calls/${currentUserData.uid}`).remove(); } }; }
+        function showCallUI(type, contactInfo, status) { ui.call.classList.remove('hidden'); ui.main.classList.add('hidden'); ui.chat.classList.add('hidden'); document.querySelector('.call-info-emoji').textContent = contactInfo.emoji; document.querySelector('.call-info-name').textContent = contactInfo.name; document.querySelector('.call-info-status').textContent = status; const isAudioOnly = type === 'audio'; document.getElementById('remote-video').style.visibility = isAudioOnly ? 'hidden' : 'visible'; document.getElementById('local-video').style.visibility = isAudioOnly ? 'hidden' : 'visible'; }
+        function endCall(sendHangup = true) { console.log("Ending call. Send hangup signal:", sendHangup); if (sendHangup && currentCallContactUid) { database.ref(`calls/${currentCallContactUid}`).update({ hangup: true }); } if (localStream) { localStream.getTracks().forEach(track => track.stop()); localStream = null; } if (peerConnection) { peerConnection.close(); peerConnection = null; } ui.ringtone.pause(); ui.call.classList.add('hidden'); ui.incomingCall.classList.add('hidden'); ui.main.classList.remove('hidden'); database.ref(`calls/${currentUserData.uid}`).remove(); incomingCallData = null; currentCallContactUid = null; }
         
-        function handleIncomingCallSignal(snapshot) {
-            const callData = snapshot.val();
-            console.log("Received call signal from Firebase:", callData);
-            if (!callData) return;
-
-            if (callData.offer && !peerConnection) {
-                if (blockedUsers[callData.from]) { database.ref(`calls/${currentUserData.uid}`).remove(); return; }
-                console.log("Incoming call offer from:", callData.from);
-                incomingCallData = callData;
-                currentCallContactUid = callData.from;
-                document.getElementById('incoming-call-info').textContent = `${callData.emoji} ${callData.name} is calling...`;
-                ui.incomingCall.classList.remove('hidden');
-                ui.ringtone.play();
-            } else if (callData.answer && peerConnection?.signalingState === 'have-local-offer') {
-                console.log("Received answer.");
-                peerConnection.setRemoteDescription(new RTCSessionDescription(callData.answer));
-            } else if (callData.iceCandidate && peerConnection) {
-                console.log("Received new ICE candidate.");
-                peerConnection.addIceCandidate(new RTCIceCandidate(callData.iceCandidate));
-            } else if (callData.rejection || callData.hangup) {
-                alert("Call " + (callData.rejection ? "Rejected" : "Ended"));
-                endCall(false);
-            }
-        }
-        
-        async function handleAcceptCall() {
-            console.log("Accepting call from:", incomingCallData.from);
-            try {
-                ui.ringtone.pause();
-                ui.incomingCall.classList.add('hidden');
-                localStream = await navigator.mediaDevices.getUserMedia({ video: incomingCallData.type === 'video', audio: true });
-                document.getElementById('local-video').srcObject = localStream;
-                setupPeerConnection(incomingCallData.from);
-                await peerConnection.setRemoteDescription(new RTCSessionDescription(incomingCallData.offer));
-                const answer = await peerConnection.createAnswer();
-                await peerConnection.setLocalDescription(answer);
-                console.log("Answer created and set as local description.");
-                await database.ref(`calls/${incomingCallData.from}`).update({ answer });
-                console.log("Answer sent to Firebase.");
-                showCallUI(incomingCallData.type, incomingCallData, 'Connecting...');
-                incomingCallData = null;
-            } catch (err) { console.error("Accept Call Error:", err); alert("Could not accept call. Check permissions and console.");}
-        }
-
-        function handleRejectCall() {
-            console.log("Rejecting call.");
-            ui.ringtone.pause();
-            ui.incomingCall.classList.add('hidden');
-            if(incomingCallData?.from) { database.ref(`calls/${incomingCallData.from}`).update({ rejection: true }); }
-            database.ref(`calls/${currentUserData.uid}`).remove();
-            incomingCallData = null;
-        }
-
-        function setupPeerConnection(contactUid) {
-            console.log("Setting up PeerConnection...");
-            peerConnection = new RTCPeerConnection(stunServers);
-            
-            peerConnection.onicecandidate = e => {
-                if (e.candidate) {
-                    console.log("Sending ICE candidate to remote peer.");
-                    database.ref(`calls/${contactUid}`).update({ iceCandidate: e.candidate.toJSON() });
-                }
-            };
-            
-            peerConnection.ontrack = e => {
-                console.log("Received remote track.");
-                document.getElementById('remote-video').srcObject = e.streams[0];
-            };
-            
-            localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
-            
-            peerConnection.onconnectionstatechange = () => {
-                const state = peerConnection.connectionState;
-                console.log("Peer connection state changed to:", state);
-                if (state === 'disconnected' || state === 'closed' || state === 'failed') {
-                    console.error("Call disconnected or failed.");
-                    endCall(false);
-                } else if (state === 'connected') {
-                    console.log("Call connected successfully!");
-                    document.querySelector('.call-info-status').textContent = 'Connected';
-                    database.ref(`calls/${currentUserData.uid}`).remove(); // Clean up my own call signal
-                }
-            };
-        }
-        
-        function showCallUI(type, contactInfo, status) {
-            ui.call.classList.remove('hidden');
-            ui.main.classList.add('hidden');
-            ui.chat.classList.add('hidden');
-            document.querySelector('.call-info-emoji').textContent = contactInfo.emoji;
-            document.querySelector('.call-info-name').textContent = contactInfo.name;
-            document.querySelector('.call-info-status').textContent = status;
-            const isAudioOnly = type === 'audio';
-            document.getElementById('remote-video').style.visibility = isAudioOnly ? 'hidden' : 'visible';
-            document.getElementById('local-video').style.visibility = isAudioOnly ? 'hidden' : 'visible';
-        }
-
-        function endCall(sendHangup = true) {
-            console.log("Ending call. Send hangup signal:", sendHangup);
-            if (sendHangup && currentCallContactUid) {
-                database.ref(`calls/${currentCallContactUid}`).update({ hangup: true });
-            }
-            if (localStream) {
-                localStream.getTracks().forEach(track => track.stop());
-                localStream = null;
-            }
-            if (peerConnection) {
-                peerConnection.close();
-                peerConnection = null;
-            }
-            ui.ringtone.pause();
-            ui.call.classList.add('hidden');
-            ui.incomingCall.classList.add('hidden');
-            ui.main.classList.remove('hidden');
-            database.ref(`calls/${currentUserData.uid}`).remove();
-            incomingCallData = null;
-            currentCallContactUid = null;
-        }
-
-        // --- Other Functions ---
+        // --- Other Functions & NEW FEATURES ---
         async function sendFriendRequest(){const i=document.getElementById("friend-mask-id-input"),id=i.value.trim(),e=document.getElementById("add-friend-error"),s=document.getElementById("add-friend-success");e.classList.add("hidden");s.classList.add("hidden");if(!id){e.textContent="Mask ID required";e.classList.remove("hidden");return}if(id===currentUserData.maskId){e.textContent="You can't add yourself.";e.classList.remove("hidden");return}try{const r=await database.ref("maskIds").child(id).once("value");if(!r.exists()){e.textContent="User not found.";e.classList.remove("hidden");return}const u=r.val(),c=await database.ref(`contacts/${currentUserData.uid}/${u}`).once("value");if(c.exists()){e.textContent="Already friends.";e.classList.remove("hidden");return}const d={senderUid:currentUserData.uid,senderName:currentUserData.name,senderEmoji:currentUserData.emoji};await database.ref(`requests/${u}`).push(d);s.classList.remove("hidden");i.value="";setTimeout(()=>document.getElementById("add-friend-modal").classList.add("hidden"),2e3)}catch(t){e.textContent=t.message;e.classList.remove("hidden")}}
         function generateChatID(a,b){return a<b?`${a}_${b}`:`${b}_${a}`}
-        function displayMessage(msg){const el=document.createElement("div");el.className="message-bubble";el.textContent=msg.text;el.classList.add(msg.senderId===currentUserData.uid?"sent":"received");const cont=document.getElementById("messages-container");cont.appendChild(el);cont.scrollTop=cont.scrollHeight}
+        
+        function displayMessage(msg){
+            const el=document.createElement("div");el.className="message-bubble";el.textContent=msg.text;el.classList.add(msg.senderId===currentUserData.uid?"sent":"received");
+            const cont=document.getElementById("messages-container");
+            
+            el.addEventListener('click', () => {
+                navigator.clipboard.writeText(msg.text).then(() => {
+                    const originalText = el.textContent;
+                    el.textContent = 'Copied!';
+                    setTimeout(() => { el.textContent = originalText; }, 1000);
+                });
+            });
+
+            cont.appendChild(el);cont.scrollTop=cont.scrollHeight
+        }
+
+        async function findRandomOnlineUser() {
+            const randomUserModal = document.getElementById('random-user-modal');
+            const profileContainer = document.getElementById('random-user-profile');
+            const errorContainer = document.getElementById('random-user-error');
+            const sendRequestBtn = document.getElementById('send-request-from-random-button');
+            
+            profileContainer.classList.add('hidden');
+            errorContainer.classList.add('hidden');
+            sendRequestBtn.classList.add('hidden');
+            randomUserModal.classList.remove('hidden');
+
+            try {
+                const onlineUsersSnapshot = await database.ref('/status').orderByChild('state').equalTo('online').once('value');
+                
+                if (!onlineUsersSnapshot.exists()) {
+                    errorContainer.textContent = "No one is online right now. Try again later!";
+                    errorContainer.classList.remove('hidden');
+                    return;
+                }
+
+                let potentialMatches = Object.keys(onlineUsersSnapshot.val());
+                potentialMatches = potentialMatches.filter(uid => 
+                    uid !== currentUserData.uid && !userContacts[uid] && !blockedUsers[uid]
+                );
+
+                if (potentialMatches.length === 0) {
+                    errorContainer.textContent = "No new users to discover right now.";
+                    errorContainer.classList.remove('hidden');
+                    return;
+                }
+
+                const randomUid = potentialMatches[Math.floor(Math.random() * potentialMatches.length)];
+                const userProfileSnapshot = await database.ref(`/users/${randomUid}`).once('value');
+                
+                if (userProfileSnapshot.exists()) {
+                    const randomUserData = userProfileSnapshot.val();
+                    document.getElementById('random-user-emoji').textContent = randomUserData.emoji;
+                    document.getElementById('random-user-name').textContent = randomUserData.name;
+                    document.getElementById('random-user-mask-id').textContent = randomUserData.maskId;
+                    
+                    sendRequestBtn.onclick = () => {
+                        const friendMaskInput = document.getElementById('friend-mask-id-input');
+                        friendMaskInput.value = randomUserData.maskId;
+                        sendFriendRequest();
+                        alert(`Friend request sent to ${randomUserData.name}!`);
+                        randomUserModal.classList.add('hidden');
+                    };
+
+                    profileContainer.classList.remove('hidden');
+                    sendRequestBtn.classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error("Error finding random user:", error);
+                errorContainer.textContent = "An error occurred. Please try again.";
+                errorContainer.classList.remove('hidden');
+            }
+        }
         
         attachAllEventListeners();
     });
