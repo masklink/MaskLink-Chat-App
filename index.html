@@ -147,8 +147,15 @@
         let userContacts = {}, blockedUsers = {}, unreadMessages = {}, onlineStatus = {}, currentOpenChatContactUid = null, currentCallContactUid = null;
         
         const stunServers = {
-            iceServers: [ { urls: 'stun:stun.l.google.com:19302' }, { urls: 'stun:stun1.l.google.com:19302' } ]
-        };
+  iceServers: [
+    { urls: 'stun:stun.l.google.com:19302' },
+    {
+      urls: 'turn:global.relay.metered.ca:443',
+      username: 'openai',
+      credential: 'openai123'
+    }
+  ]
+};
 
         const ui = {loader: document.getElementById('loader'),auth: document.getElementById('auth-container'),app: document.getElementById('app-container'),main: document.getElementById('main-app'),chat: document.getElementById('chat-view'),profileSetup: document.getElementById('profile-setup-modal'),call: document.getElementById('call-view'),incomingCall: document.getElementById('incoming-call-modal'),ringtone: document.getElementById('ringtone')};
 
